@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from grievance_app.models import * 
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.hashers import check_password
+from django.core.mail import send_mail
 
 # Create your views here.
 def login(request):
@@ -19,6 +20,16 @@ def login(request):
         if employee_user:
             request.session['user_name'] = employee_user[0].username 
             if check_password(password, employee_user[0].password):
+                send_mail(
+                    "New Grievance Posted!",
+
+                    f"""Your Employee {employee_user[0].firstname} 
+                    post a grievance message.""",
+
+                    "Your_email_id",
+                    [employee_user[0].email],
+                    fail_silently = False,
+                )
                 return render(request, 'emp_home.html', {'user_data' : employee_user[0]})
             else:
                 return render(request, 'login.html')
