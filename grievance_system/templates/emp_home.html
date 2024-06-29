@@ -74,17 +74,17 @@
                     <div class="form-section">
                         <p> {{data.username}} </p>
                         <label for="date">Date</label>
-                        <input name='today_data' type="date" id="date" />
+                        <input name='today_date' type="date" id="date" />
                         <label for="name">Name</label>
-                        <input name='name' type="text" name="name" id="name" placeholder="Enter your name" autocomplete="name" required />
+                        <input name='name' type="text" id="name" placeholder="Enter your name" autocomplete="name" required />
                         <label for="email">Email</label>
-                        <input name='email' type="email" name="email" id="email" placeholder="Enter your email" autocomplete="email" required />
+                        <input name='email' type="email" id="email" placeholder="Enter your email" autocomplete="email" required />
                         <label for="JobTitle">Job title</label>
-                        <input name='dept' type="text" name="JobTitle" id="JobTitle" placeholder="Enter your job title" />
+                        <input name='dept' type="text" id="JobTitle" placeholder="Enter your job title" />
                     </div>
                     <div class="form-section">
                         <label for="DateTime">Date & Time of Event</label>
-                        <input type="datetime-local" id="DateTime" name="DateTime" required />
+                        <input type="datetime-local" id="DateTime" name="event_Date" required />
                         <label for="location">Location of event</label>
                         <input type="text" name="location" id="location" placeholder="Enter the location of the event" required />
                         <label for="Description">Event Description</label>
@@ -94,7 +94,6 @@
                         <input type="text" name="violations" id="violations" placeholder="Enter the violations that occurred" required />
                         <label for="documents">Attach Documents if required</label>
                         <input type="file" name="documents" id="documents" />
-                        <button type="submit" class="button">Submit</button>
                     </div>
                     <button type="submit" class="button">Submit</button>
                 </form>
