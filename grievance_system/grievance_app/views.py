@@ -53,8 +53,6 @@ def emp_home(request):
         if request.Files['documents'] != 0:
             grievance_db.files = request.Files['documents']
         
-        
-
     return render(request, 'emp_home.html')
 
 

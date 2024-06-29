@@ -30,7 +30,7 @@ class Administrator_db(models.Model):
 
 
 class grievance_db(models.Model):
-    G_id = models.AutoField(primary_key = True, max_length = 15)
+    G_id = models.AutoField(primary_key = True)
     user_id = models.CharField(max_length = 50)
     G_title = models.CharField(max_length = 100)
     G_desc = models.TextField()
@@ -38,7 +38,7 @@ class grievance_db(models.Model):
     severity = models.IntegerField()
     files = models.FileField(upload_to = "G_media/", default=None)
     register_time = models.TimeField(auto_now_add = True)
-    event_date = models.TimeField()
+    event_date = models.TimeField(auto_now = 'True')
     completion_time = models.TimeField(auto_now_add = True)
     statue = models.CharField(max_length = 50)
 
