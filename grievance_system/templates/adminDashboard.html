@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./static/adminDashboard.css">
+    <title>Easy Complaint Management</title>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">
+                <img src="https://placehold.co/40x40" alt="Easy Complaint Logo">
+                <span class="logo-text">Easy Complaint</span>
+            </div>
+            <ul class="nav">
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Sub-admin</a></li>
+                <li><a href="#">Manage Complaint</a></li>
+                <li><a href="#">Manage users</a></li>
+                <li><a href="#">Add Category</a></li>
+                <li><a href="#">Add Sub-Category</a></li>
+                <li><a href="#">Add State</a></li>
+                <li><a href="#">User Login Log</a></li>
+                <li><a href="#">Reports</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </div>
+        
+        <div class="content">
+            <div class="header">
+                <h1>Dashboard</h1>
+                <div class="admin-info">
+                    <span>Admin</span>
+                    <img src="https://placehold.co/40x40" alt="Admin Avatar" class="avatar">
+                </div>
+            </div>
+            
+            <div class="stats">
+                <div class="stat total">
+                    <h2>Total</h2>
+                    <p>3</p>
+                </div>
+                <div class="stat not-processed">
+                    <h2>Not Processed Yet</h2>
+                    <p>0</p>
+                </div>
+                <div class="stat in-process">
+                    <h2>In Process</h2>
+                    <p>0</p>
+                </div>
+                <div class="stat closed">
+                    <h2>Closed</h2>
+                    <p>3</p>
+                </div>
+            </div>
+            
+            <div class="sub-admin-data">
+                <h2>Sub Admin Data</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Subadmin Name /Dept</th>
+                            <th>Total</th>
+                            <th>Not Processed Yet</th>
+                            <th>In Process</th>
+                            <th>Closed</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>harsha-technical</td>
+                            <td>1</td>
+                            <td class="text-red">0</td>
+                            <td class="text-orange">0</td>
+                            <td class="text-green">1</td>
+                        </tr>
+                        <tr class="font-bold">
+                            <td>Grand Total</td>
+                            <td>1</td>
+                            <td class="text-red">0</td>
+                            <td class="text-orange">0</td>
+                            <td class="text-green">1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

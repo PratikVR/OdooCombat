@@ -1,0 +1,189 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f3f3f3;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 20%;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo img {
+    margin-right: 10px;
+}
+
+.logo-text {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+}
+
+.nav {
+    list-style: none;
+    padding: 0;
+}
+
+.nav li {
+    margin-bottom: 10px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
+    display: block;
+    border-radius: 4px;
+}
+
+.nav a:hover {
+    background-color: #e5e5e5;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 2em;
+    color: #333;
+}
+
+.admin-info {
+    display: flex;
+    align-items: center;
+}
+
+.admin-info span {
+    margin-right: 10px;
+    color: #333;
+}
+
+.avatar {
+    border-radius: 50%;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.stat {
+    padding: 20px;
+    border-radius: 4px;
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.stat h2 {
+    margin: 0 0 10px;
+    font-size: 1.2em;
+}
+
+.stat p {
+    margin: 0;
+    font-size: 2em;
+}
+
+.total {
+    background-color: #007bff;
+}
+
+.not-processed {
+    background-color: #fd7e14;
+}
+
+.in-process {
+    background-color: #28a745;
+}
+
+.closed {
+    background-color: #343a40;
+}
+
+.sub-admin-data {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.sub-admin-data h2 {
+    margin: 0 0 20px;
+    font-size: 1.5em;
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #e5e5e5;
+    text-align: center;
+}
+
+thead {
+    background-color: #e5e5e5;
+    color: #333;
+}
+
+tbody td {
+    color: #333;
+}
+
+tbody .text-red {
+    color: red;
+}
+
+tbody .text-orange {
+    color: orange;
+}
+
+tbody .text-green {
+    color: green;
+}
+
+.font-bold {
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 0;
+    color: #777;
+}

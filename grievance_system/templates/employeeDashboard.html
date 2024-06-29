@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./static/employeeDashboard.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Dashboard</h2>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">Submit Grievance</a>
+                <a href="#">My Grievances</a>
+                <a href="#">Profile</a>
+                <a href="#">Settings</a>
+            </nav>
+        </div>
+        <div class="main-content">
+            <header>
+                <h1>Welcome, User!</h1>
+                <button>Logout</button>
+            </header>
+            <div class="stats">
+                <div class="stat">
+                    <h3>Total Grievances</h3>
+                    <p>15</p>
+                </div>
+                <div class="stat">
+                    <h3>Pending</h3>
+                    <p>5</p>
+                </div>
+                <div class="stat">
+                    <h3>Resolved</h3>
+                    <p>10</p>
+                </div>
+            </div>
+            <section class="recent-grievances">
+                <h2>Recent Grievances</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Status</th>
+                            <th>Date</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Issue with service</td>
+                            <td>Pending</td>
+                            <td>2023-10-01</td>
+                            <td><button>View</button></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Billing error</td>
+                            <td>Resolved</td>
+                            <td>2023-09-28</td>
+                            <td><button>View</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section class="submit-grievance">
+                <h2>Submit a New Grievance</h2>
+                <form id="form">
+                    <div class="form-section">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" />
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name" placeholder="Enter your name" autocomplete="name" required />
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" placeholder="Enter your email" autocomplete="email" required />
+                        <label for="JobTitle">Job title</label>
+                        <input type="text" name="JobTitle" id="JobTitle" placeholder="Enter your job title" />
+                        <label for="Employee ID">Employee ID</label>
+                        <input type="text" name="Employee ID" id="Employee ID" placeholder="Enter your Employee ID" />
+                    </div>
+                    <div class="form-section">
+                        <label for="DateTime">Date & Time of Event</label>
+                        <input type="datetime-local" id="DateTime" name="DateTime" required />
+                        <label for="location">Location of event</label>
+                        <input type="text" name="location" id="location" placeholder="Enter the location of the event" required />
+                        <label for="Description">Event Description</label>
+                        <textarea name="Description" id="Description" cols="30" rows="10" placeholder="Enter a detailed description of the event" required></textarea>
+                        <small class="note">*Please Provide detailed information. Include the names involved</small>
+                        <label for="violations">Violations</label>
+                        <input type="text" name="violations" id="violations" placeholder="Enter the violations that occurred" required />
+                        <label for="documents">Attach Documents if required</label>
+                        <input type="file" name="documents" id="documents" />
+                    </div>
+                </form>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
