@@ -1,0 +1,91 @@
+:root {
+    --background: hsl(0, 0%, 100%);
+    --foreground: hsl(240, 10%, 3.9%);
+    --card: hsl(0, 0%, 100%);
+    --card-foreground: hsl(240, 10%, 3.9%);
+    --primary: hsl(240, 5.9%, 10%);
+    --primary-foreground: hsl(0, 0%, 98%);
+    --secondary-foreground: hsl(240, 5.9%, 10%);
+    --border: hsl(240, 5.9%, 90%);
+    --box-shadow-color:rgba(0, 0, 0, 0.1);
+}
+
+body.dark {
+    --background: hsl(240, 10%, 3.9%);
+    --foreground: hsl(0, 0%, 98%);
+    --card: hsl(240, 10%, 3.9%);
+    --card-foreground: hsl(0, 0%, 98%);
+    --primary: hsl(0, 0%, 98%);
+    --primary-foreground: hsl(240, 5.9%, 10%);
+    --secondary-foreground: hsl(0, 0%, 98%);
+    --border: hsl(240, 3.7%, 15.9%);
+    --box-shadow-color:rgba(255, 255, 255, 0.1);
+}
+
+body {
+    background-color: var(--background);
+    color: var(--foreground);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    background-color: var(--background);
+    color: var(--primary-foreground);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    background-color: var(--card);
+    width: 20rem;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px var(--box-shadow-color);
+    transition: transform 0.2s;
+    border: 1px solid var(--border);
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-image {
+    width: 100%;
+    height: 10rem;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--card-foreground);
+    margin-bottom: 0.5rem;
+}
+
+.card-text {
+    font-size: 0.875rem;
+    color: var(--secondary-foreground);
+    margin-bottom: 0.25rem;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root{
+        --background: hsl(240, 10%, 3.9%);
+        --foreground: hsl(0, 0%, 98%);
+        --card: hsl(240, 10%, 3.9%);
+        --card-foreground: hsl(0, 0%, 98%);
+        --primary: hsl(0, 0%, 98%);
+        --primary-foreground: hsl(240, 5.9%, 10%);
+        --secondary-foreground: hsl(0, 0%, 98%);
+        --border: hsl(240, 3.7%, 15.9%);
+        --box-shadow-color:rgba(255, 255, 255, 0.1);
+    }
+}
+
