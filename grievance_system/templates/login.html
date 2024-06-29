@@ -11,12 +11,12 @@
 <body>
     <div class="container">
         <div class="title">
-            <h2>Already a User, Sign-in now</h2>
+            <h2>Sign-in into Grievance system</h2>
         </div>
         <form id="loginform" method="POST">
             {% csrf_token %}
             <div class="input-wrapper">
-                <input name='username' type="username" id="username" required autocomplete="off">
+                <input name='username' type="username" id="username" required autocomplete="name">
                 <label for="username">Enter Username</label>
                 <div class="underline"></div>
             </div>
