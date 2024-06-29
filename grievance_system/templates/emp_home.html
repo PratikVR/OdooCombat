@@ -80,7 +80,7 @@
                         <input type="datetime-local" id="DateTime" name="DateTime" required />
                         
                         <label for="Subject">Subject of event</label>
-                        <input type="text" name="Subject" id="Subject" placeholder="Enter the title of the event" required />
+                        <input type="text" name="title" id="Subject" placeholder="Enter the title of the event" required />
                         
                         <label for="Description">Event Description</label>
                         <textarea name="Description" id="Description" cols="30" rows="10" placeholder="Enter a detailed description of the event" required></textarea>
@@ -94,7 +94,7 @@
                             <option value="high" style="background-color: red;">HIGH</option>
                         </select>
                         <label for="documents">Attach Documents if required</label>
-                        <input type="file" name="documents" id="documents" />
+                        <input type="file" name="documents" id="documents" accept="image/*">
                     </div>
                     <button type="submit" class="button">Submit</button>
                 </form>

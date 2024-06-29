@@ -8,7 +8,6 @@ def login(request):
     if request.method == 'POST':
         user_name = request.POST.get('username')
         password = request.POST.get('password')
-        print(user_name)
 
         if 'Emp' in user_name:
             employee_user = Employee_db.objects.filter(username = user_name)
@@ -32,9 +31,6 @@ def login(request):
 def emp_home(request):
     if request.method == 'POST':
         user_id = request.session.get('user_name')
-        print(user_id)
-        # emp_email = request.POST.get('email')
-        dept_name = request.POST.get('dept')
         event_date = request.POST.get('event_date')
         G_title = request.POST.get('title')
         descp = request.POST.get('Description')
@@ -44,15 +40,24 @@ def emp_home(request):
             user_id = user_id,
             G_title = G_title,
             G_desc = descp,
-            user_dept = dept_name,
             severity = severity,
             event_date = event_date,
             status = '0'
         )
-
-        if request.Files['documents'] != 0:
-            grievance_db.files = request.Files['documents']
         
+        if len(request.FILES) != 0:
+            new_request.files = request.FILES['documents']
+        
+        if 'Emp' in user_id:
+            employee_user = Employee_db.objects.filter(username = user_id)
+        elif 'HR' in user_id:
+            employee_user = HR_db.objects.filter(username = user_id)
+        elif 'admin' in user_id:
+            employee_user = Administrator_db.objects.filter(username = user_id)
+
+        new_request.user_dept = employee_user[0].emp_dept
+        new_request.save()
+
     return render(request, 'emp_home.html')
 
 
