@@ -8,6 +8,7 @@ def login(request):
     if request.method == 'POST':
         user_name = request.POST.get('username')
         password = request.POST.get('password')
+        print(user_name)
 
         if 'Emp' in user_name:
             employee_user = Employee_db.objects.filter(username = user_name)
@@ -19,9 +20,9 @@ def login(request):
         if employee_user:
             request.session['user_name'] = employee_user[0].username 
             if check_password(password, employee_user[0].password):
-                return render(request, 'emp_home.html', {'user_data' : employee_user})
+                return render(request, 'emp_home.html', {'user_data' : employee_user[0]})
             else:
-                return redirect('/')
+                return render(request, 'login.html')
         else:
             return render(request, 'login.html')
     return render(request, 'login.html')
@@ -39,7 +40,6 @@ def emp_home(request):
         descp = request.POST.get('Description')
         severity = request.POST.get('severity')
 
-        
         new_request = grievance_db.objects.create(
             user_id = user_id,
             G_title = G_title,
@@ -47,7 +47,7 @@ def emp_home(request):
             user_dept = dept_name,
             severity = severity,
             event_date = event_date,
-            status = 0,
+            status = '0',
         )
 
         if request.Files['documents'] != 0:

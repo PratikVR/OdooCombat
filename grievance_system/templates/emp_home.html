@@ -69,10 +69,10 @@
             </section>
             <section class="submit-grievance">
                 <h2>Submit a New Grievance</h2>
-                <form id="form" method="POST">
+                <form id="form" action="{% url 'emp_home' %}"method="POST">
                     {% csrf_token %}
                     <div class="form-section">
-                        <p> {{data.username}} </p>
+                        <p> {{user_data.username}} </p>
                     </div>
                     <div class="form-section">
                         <label for="DateTime">Date & Time of Event</label>
