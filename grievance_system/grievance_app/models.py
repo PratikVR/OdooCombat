@@ -35,7 +35,7 @@ class grievance_db(models.Model):
     G_title = models.CharField(max_length = 100)
     G_desc = models.TextField()
     user_dept = models.CharField(max_length = 100)
-    severity = models.IntegerField(max_length = 3)
+    severity = models.IntegerField()
     files = models.FileField(upload_to = "G_media/")
     register_time = models.TimeField(auto_now_add = True)
     completion_time = models.TimeField(auto_now_add = True)
