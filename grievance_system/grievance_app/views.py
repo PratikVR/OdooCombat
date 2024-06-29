@@ -20,16 +20,6 @@ def login(request):
         if employee_user:
             request.session['user_name'] = employee_user[0].username 
             if check_password(password, employee_user[0].password):
-                send_mail(
-                    "New Grievance Posted!",
-
-                    f"""Your Employee {employee_user[0].firstname} 
-                    post a grievance message.""",
-
-                    "Your_email_id",
-                    [employee_user[0].email],
-                    fail_silently = False,
-                )
                 return render(request, 'emp_home.html', {'user_data' : employee_user[0]})
             else:
                 return render(request, 'login.html')
@@ -68,6 +58,16 @@ def emp_home(request):
 
         new_request.user_dept = employee_user[0].emp_dept
         new_request.save()
+        send_mail(
+                    "New Grievance Posted!",
+
+                    f"""Your Employee {employee_user[0].firstname} 
+                    post a grievance message.""",
+
+                    "Your_email_id",
+                    [employee_user[0].email],
+                    fail_silently = False,
+                )
 
     return render(request, 'emp_home.html')
 
