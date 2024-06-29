@@ -85,12 +85,18 @@
                     <div class="form-section">
                         <label for="DateTime">Date & Time of Event</label>
                         <input type="datetime-local" id="DateTime" name="DateTime" required />
-                        <label for="location">Location of event</label>
-                        <input type="text" name="location" id="location" placeholder="Enter the location of the event" required />
+                        <label for="Subject">Subject of event</label>
+                        <input type="text" name="Subject" id="Subject" placeholder="Enter the location of the event" required />
                         <label for="Description">Event Description</label>
                         <textarea name="Description" id="Description" cols="30" rows="10" placeholder="Enter a detailed description of the event" required></textarea>
                         <small class="note">*Please Provide detailed information. Include the names involved</small>
-                        <label for="violations">Violations</label>
+                        <label for="severity">Choose a severity:</label>
+                        <select id="severity" name="severity" default="select">
+                            <option value="low" selected disabled hidden>Select an Option</option>
+                            <option value="low" style="background-color: yellow;">LOW</option>
+                            <option value="medium" style="background-color: orange;">MEDIUM</option>
+                            <option value="high" style="background-color: red;">HIGH</option>
+                        </select>
                         <input type="text" name="violations" id="violations" placeholder="Enter the violations that occurred" required />
                         <label for="documents">Attach Documents if required</label>
                         <input type="file" name="documents" id="documents" />
@@ -101,5 +107,12 @@
             </section>
         </div>
     </div>
+    <script>
+        const priority = document.getElementById("priority");
+        priority.addEventListener("change", function(e) {
+            const selectedOption = e.target.options[e.target.selectedIndex];
+            priority.style.backgroundColor = selectedOption.style.backgroundColor;
+        })
+    </script>
 </body>
 </html>
