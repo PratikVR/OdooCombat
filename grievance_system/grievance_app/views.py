@@ -31,7 +31,7 @@ def login(request):
 
 def emp_home(request):
     if request.method == 'POST':
-        user_id = request.GET.get('user_name')
+        user_id = request.session.get('user_name')
         print(user_id)
         # emp_email = request.POST.get('email')
         dept_name = request.POST.get('dept')
@@ -47,7 +47,7 @@ def emp_home(request):
             user_dept = dept_name,
             severity = severity,
             event_date = event_date,
-            status = '0',
+            status = '0'
         )
 
         if request.Files['documents'] != 0:

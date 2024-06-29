@@ -40,7 +40,7 @@ class grievance_db(models.Model):
     register_time = models.TimeField(auto_now_add = True)
     event_date = models.TimeField(auto_now = 'True')
     completion_time = models.TimeField(auto_now_add = True)
-    statue = models.CharField(max_length = 50)
+    status = models.CharField(max_length = 5)
 
 
 def set_password(raw_password):
